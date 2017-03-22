@@ -13,7 +13,15 @@
     </head>
     <body>
         <div id="list">
-            To Do list will go here
+            <!-- Default rendering. This will be overwritten once Vue fetches server info -->
+            <ol>
+                @foreach(App\Item::all() as $item)
+                <li>
+                    {{ $item->task }}
+                </li>
+                @endforeach
+            </ol>
         </div>
+        <!--<script src="{{ URL::asset('js/app.js') }}"></script>-->
     </body>
 </html>
