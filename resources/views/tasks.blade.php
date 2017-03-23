@@ -12,7 +12,7 @@
         <!-- Styles -->
     </head>
     <body>
-        <div id="list">
+        <div id="list" items="">
             <!-- Default rendering. This will be overwritten once Vue fetches server info -->
             <ol>
                 @foreach(App\Item::all() as $item)
@@ -22,6 +22,6 @@
                 @endforeach
             </ol>
         </div>
-        <!--<script src="{{ URL::asset('js/app.js') }}"></script>-->
+        <script src="{{ URL::asset('js/app.js') }}"></script>
     </body>
 </html>

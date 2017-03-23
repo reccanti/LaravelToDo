@@ -20,9 +20,3 @@ const app = new Vue({
     render: h => h('todo-list')
 });
 
-axios.get('api/tasks')
-     .then(response => {
-         response.data.map(item => {
-             console.log(item.task);
-         })
-     });

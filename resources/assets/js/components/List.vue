@@ -6,11 +6,24 @@
     </ol>
 </template>
 
+<style>
+    li {
+        color: blue;
+    }
+</style>
+
 <script>
     export default {
-        props: ['items'],
+        data() {
+            return {
+                "items": []
+            }
+        },
         mounted() {
-            console.log(this.items);
+            axios.get('api/tasks')
+                .then(response => {
+                    this.items = response.data;
+                });
         }
     }
 </script>
