@@ -15,6 +15,6 @@ Route::get('/', function () {
     return redirect('/tasks');
 });
 
-Route::get('/tasks', function () {
-    return view('tasks');
-});
+Route::resource('/tasks', 'ItemController', ['only' => [
+    'index', 'show', 'edit', 'create'
+]]);
